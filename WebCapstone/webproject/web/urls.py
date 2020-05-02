@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import picture.views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', picture.views.home, name="home"),
     path('recommendation/', picture.views.recommendation, name="recommendation"),
     path('result/', picture.views.result, name="result"),
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -149,6 +149,19 @@
             </div>
         </div>
     </div>-->
+    <h1>
+        {% for key, value in info.items %}
+            {% for k, v in value.items %}
+                {% if k == 'width' %}
+                    {{ v }}
+                {% endif %}
+                {% if k == 'height' %}
+                    {{ v }}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </h1>
+
     <div class="breadcumb-nav">
         <div class="container">
             <div class="row">
@@ -176,7 +189,17 @@
                         <!-- Post Thumb -->
                         <div class="post-thumb">
                             <!--<img src="img/blog-img/2.jpg" alt="">-->
-                            <img srcset="https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492__340.jpg 1x, https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492__480.jpg 2x" src="https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492__340.jpg" onclick="swal('Would you like to use this image as a style image?');" style="cursor:pointer;"/>
+                            {% for key, value in info.items %}
+                                {% if key == 0 %}
+                                    {% for k, v in value.items %}
+                                        {% if k == 'url' %}
+                                            <img src="{{v}}"></img>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                            <!--<img srcset="https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492__340.jpg 1x, https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492__480.jpg 2x" src="https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492__340.jpg" onclick="swal('Would you like to use this image as a style image?');" style="cursor:pointer;"/>
+                            -->
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
@@ -184,22 +207,58 @@
                                 <div class="post-author-date-area d-flex">
                                     <!-- Post Author -->
                                     <div class="post-author">
-                                        <a href="#">By JillWellington</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 0 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'user' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">By JillWellington</a>-->
                                     </div>
                                     <!-- Post Date -->
                                     <div class="post-date">
-                                        <a href="#">Feb 8, 2018</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 0 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'date' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">Feb 8, 2018</a>-->
                                     </div>
                                 </div>
                                 <!-- Post Comment & Share Area -->
                                 <div class="post-comment-share-area d-flex">
                                     <!-- Post Favourite -->
                                     <div class="post-favourite">
-                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 1636</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 0 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'likes' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 1636</a>-->
                                     </div>
                                     <!-- Post Comments -->
                                     <div class="post-comments">
-                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 167</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 0 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'comments' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 167</a>-->
                                     </div>
                                     <!-- Post Share -->
                                     <div class="post-share">
@@ -210,6 +269,13 @@
                         </div>
                     </div>
                 </div>
+                
+
+                <!--{% for key, value in info.items %}
+                    {% for k, v in value.items %}
+                        {{ v }}
+                    {% endfor %}
+                {% endfor %}-->
 
                 <!-- Single Post -->
                 <div class="col-12 col-md-6 col-lg-4">
@@ -217,8 +283,17 @@
                         <!-- Post Thumb -->
                         <div class="post-thumb">
                             <!--<img src="img/blog-img/3.jpg" alt="">-->
-                            
-                            <img srcset="https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830__340.jpg 1x, https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830__480.jpg 2x" src="https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830__340.jpg" onclick="swal('Would you like to use this image as a style image?');" style="cursor:pointer;"/>
+                            {% for key, value in info.items %}
+                                {% if key == 1 %}
+                                    {% for k, v in value.items %}
+                                        {% if k == 'url' %}
+                                            <img src="{{v}}"></img>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                            <!--<img srcset="https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830__340.jpg 1x, https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830__480.jpg 2x" src="https://cdn.pixabay.com/photo/2012/03/01/00/55/flowers-19830__340.jpg" onclick="swal('Would you like to use this image as a style image?');" style="cursor:pointer;"/>
+                            -->
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
@@ -226,22 +301,58 @@
                                 <div class="post-author-date-area d-flex">
                                     <!-- Post Author -->
                                     <div class="post-author">
-                                        <a href="#">By Larisa-K</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 1 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'user' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">By Larisa-K</a>-->
                                     </div>
                                     <!-- Post Date -->
                                     <div class="post-date">
-                                        <a href="#">Feb 29, 2012</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 1 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'date' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">Feb 29, 2012</a>-->
                                     </div>
                                 </div>
                                 <!-- Post Comment & Share Area -->
                                 <div class="post-comment-share-area d-flex">
                                     <!-- Post Favourite -->
                                     <div class="post-favourite">
-                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 1973</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 1 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'likes' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 1973</a>-->
                                     </div>
                                     <!-- Post Comments -->
                                     <div class="post-comments">
-                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 245</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 1 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'comments' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 245</a>-->
                                     </div>
                                     <!-- Post Share -->
                                     <div class="post-share">
@@ -255,6 +366,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <script>
                     // When the user clicks on div, open the popup
                     function myFunction() {
@@ -267,8 +379,18 @@
                     <div class="single-post wow fadeInUp" data-wow-delay="0.3s">
                         <!-- Post Thumb -->
                         <div class="post-thumb">
+                            {% for key, value in info.items %}
+                                {% if key == 2 %}
+                                    {% for k, v in value.items %}
+                                        {% if k == 'url' %}
+                                            <img src="{{v}}"></img>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             <!--<img src="img/blog-img/4.jpg" alt="">-->
-                            <a href="#"><img srcset="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg 1x, https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg 2x" src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg" alt="white flower"></a>
+                            <!--<a href="#"><img srcset="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg 1x, https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg 2x" src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg" alt="white flower"></a>
+                            -->
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
@@ -276,22 +398,58 @@
                                 <div class="post-author-date-area d-flex">
                                     <!-- Post Author -->
                                     <div class="post-author">
-                                        <a href="#">By Bessi</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 2 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'user' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">By Bessi</a>-->
                                     </div>
                                     <!-- Post Date -->
                                     <div class="post-date">
-                                        <a href="#">Apr 20, 2015</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 2 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'date' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">Apr 20, 2015</a>-->
                                     </div>
                                 </div>
                                 <!-- Post Comment & Share Area -->
                                 <div class="post-comment-share-area d-flex">
                                     <!-- Post Favourite -->
                                     <div class="post-favourite">
-                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 1236</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 2 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'likes' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 1236</a>-->
                                     </div>
                                     <!-- Post Comments -->
                                     <div class="post-comments">
-                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 191</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 2 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'comments' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 191</a>-->
                                     </div>
                                     <!-- Post Share -->
                                     <div class="post-share">
@@ -311,8 +469,18 @@
                     <div class="single-post wow fadeInUp" data-wow-delay="0.4s">
                         <!-- Post Thumb -->
                         <div class="post-thumb">
+                            {% for key, value in info.items %}
+                                {% if key == 3 %}
+                                    {% for k, v in value.items %}
+                                        {% if k == 'url' %}
+                                            <img src="{{v}}"></img>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             <!--<img src="img/blog-img/5.jpg" alt="">-->
-                            <a href="#"><img srcset="https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__340.jpg 1x, https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__480.jpg 2x" src="https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__340.jpg" alt="pink petaled flowers"></a>
+                            <!--<a href="#"><img srcset="https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__340.jpg 1x, https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__480.jpg 2x" src="https://cdn.pixabay.com/photo/2014/04/14/20/11/japanese-cherry-trees-324175__340.jpg" alt="pink petaled flowers"></a>
+                            -->
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
@@ -320,22 +488,58 @@
                                 <div class="post-author-date-area d-flex">
                                     <!-- Post Author -->
                                     <div class="post-author">
-                                        <a href="#">By Hans</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 3 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'user' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">By Hans</a>-->
                                     </div>
                                     <!-- Post Date -->
                                     <div class="post-date">
-                                        <a href="#">Mar 31, 2019</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 3 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'date' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">Mar 31, 2019</a>-->
                                     </div>
                                 </div>
                                 <!-- Post Comment & Share Area -->
                                 <div class="post-comment-share-area d-flex">
                                     <!-- Post Favourite -->
                                     <div class="post-favourite">
-                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 2754</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 3 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'likes' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 2754</a>-->
                                     </div>
                                     <!-- Post Comments -->
                                     <div class="post-comments">
-                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 469</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 3 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'comments' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 469</a>-->
                                     </div>
                                     <!-- Post Share -->
                                     <div class="post-share">
@@ -355,8 +559,18 @@
                     <div class="single-post wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Post Thumb -->
                         <div class="post-thumb">
+                            {% for key, value in info.items %}
+                                {% if key == 4 %}
+                                    {% for k, v in value.items %}
+                                        {% if k == 'url' %}
+                                            <img src="{{v}}"></img>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             <!--<img src="img/blog-img/2.jpg" alt="">-->
-                            <a href="#"><img src="https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__340.jpg" data-lazy-srcset="https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__340.jpg 1x, https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__480.jpg 2x" data-lazy="https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__340.jpg" alt="pink flowers macro photography" srcset="https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__340.jpg 1x, https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__480.jpg 2x"></a>
+                            <!--<a href="#"><img src="https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__340.jpg" data-lazy-srcset="https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__340.jpg 1x, https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__480.jpg 2x" data-lazy="https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__340.jpg" alt="pink flowers macro photography" srcset="https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__340.jpg 1x, https://cdn.pixabay.com/photo/2014/12/29/18/07/cosmea-583092__480.jpg 2x"></a>
+                            -->
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
@@ -364,22 +578,58 @@
                                 <div class="post-author-date-area d-flex">
                                     <!-- Post Author -->
                                     <div class="post-author">
-                                        <a href="#">By DreamyArt</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 4 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'user' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">By DreamyArt</a>-->
                                     </div>
                                     <!-- Post Date -->
                                     <div class="post-date">
-                                        <a href="#">Dec 29, 2014</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 4 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'date' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">Dec 29, 2014</a>-->
                                     </div>
                                 </div>
                                 <!-- Post Comment & Share Area -->
                                 <div class="post-comment-share-area d-flex">
                                     <!-- Post Favourite -->
                                     <div class="post-favourite">
-                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 551</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 4 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'likes' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 551</a>-->
                                     </div>
                                     <!-- Post Comments -->
                                     <div class="post-comments">
-                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 74</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 4 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'comments' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 74</a>-->
                                     </div>
                                     <!-- Post Share -->
                                     <div class="post-share">
@@ -399,8 +649,18 @@
                     <div class="single-post wow fadeInUp" data-wow-delay="0.6s">
                         <!-- Post Thumb -->
                         <div class="post-thumb">
+                            {% for key, value in info.items %}
+                                {% if key == 5 %}
+                                    {% for k, v in value.items %}
+                                        {% if k == 'url' %}
+                                            <img src="{{v}}"></img>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             <!--<img src="img/blog-img/3.jpg" alt="">-->
-                            <a href="#"><img src="https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__340.jpg" data-lazy-srcset="https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__340.jpg 1x, https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__480.jpg 2x" data-lazy="https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__340.jpg" alt="purple petaled flower bouquet" srcset="https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__340.jpg 1x, https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__480.jpg 2x"></a>
+                            <!--<a href="#"><img src="https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__340.jpg" data-lazy-srcset="https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__340.jpg 1x, https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__480.jpg 2x" data-lazy="https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__340.jpg" alt="purple petaled flower bouquet" srcset="https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__340.jpg 1x, https://cdn.pixabay.com/photo/2013/07/30/12/25/marriage-168831__480.jpg 2x"></a>
+                            -->
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
@@ -408,22 +668,58 @@
                                 <div class="post-author-date-area d-flex">
                                     <!-- Post Author -->
                                     <div class="post-author">
-                                        <a href="#">By virandek</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 5 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'user' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">By virandek</a>-->
                                     </div>
                                     <!-- Post Date -->
                                     <div class="post-date">
-                                        <a href="#">Jul 31, 2013</a>
+                                        {% for key, value in info.items %}
+                                            {% if key == 5 %}
+                                                {% for k, v in value.items %}
+                                                    {% if k == 'date' %}
+                                                        <a href="#">{{ v }}</a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <!--<a href="#">Jul 31, 2013</a>-->
                                     </div>
                                 </div>
                                 <!-- Post Comment & Share Area -->
                                 <div class="post-comment-share-area d-flex">
                                     <!-- Post Favourite -->
                                     <div class="post-favourite">
-                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 823</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 5 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'likes' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 823</a>-->
                                     </div>
                                     <!-- Post Comments -->
                                     <div class="post-comments">
-                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 103</a>
+                                    {% for key, value in info.items %}
+                                        {% if key == 5 %}
+                                            {% for k, v in value.items %}
+                                                {% if k == 'comments' %}
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> {{v}} </a>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                        <!--<a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 103</a>-->
                                     </div>
                                     <!-- Post Share -->
                                     <div class="post-share">

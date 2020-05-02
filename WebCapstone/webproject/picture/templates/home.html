@@ -16,7 +16,8 @@
     <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
 
     <!-- Core Stylesheet -->
-    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="static/style.css?after" rel="stylesheet">
+    <!--<link href="{% static 'style.css' %}" rel="stylesheet">-->
 
     <!-- Responsive CSS -->
     <link href="{% static 'css/responsive/responsive.css' %}" rel="stylesheet">
@@ -256,14 +257,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
-                        <img src="{% static 'img/catagory-img/flower1.jpg' %}" alt="">
-                        <!--<img src="{% static 'img/catagory-img/upload.jpg' %}" alt="">-->
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".3s" style="text-align: center;">
+                            <!--<img class="mh-100" src="" alt="">-->
+                        <img src="{% static 'img/catagory-img/1.jpg' %}" alt="" style="margin-top:auto; margin-bottom: auto;">
+                        <!--<img src="{{ images.photo.url }}">-->
+                        <!--<img src="{% static 'img/catagory-img/flower1.jpg' %}" alt="">-->
+                        <!--<button type="submit" class="btn contact-btn">Post Comment</button>-->
                         <div class="catagory-title">
                             <a href="#">
                                 <h5>User Image</h5>
                             </a>
                         </div>
+
+                        
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">

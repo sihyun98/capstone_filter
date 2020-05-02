@@ -125,6 +125,9 @@ p {
 }
 
 img {
+    width: 600px;
+    height: 320px;
+    /* float:center; */
     max-width: 100%;
 }
 
@@ -578,9 +581,12 @@ li {
 }
 
 .single_catagory {
+    margin:auto;
+    /* margin-top: auto; */
     position: relative;
     z-index: 1;
-    margin-bottom: 30px;
+    /* margin-bottom: auto; */
+    /*margin-bottom: 30px;*/
 }
 
 .single_catagory img {
@@ -590,6 +596,7 @@ li {
 .catagory-title {
     width: 200px;
     height: 50px;
+    /* background-color: #41a1f6; */
     background-color: #fff;
     position: absolute;
     top: 50%;

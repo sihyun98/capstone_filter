@@ -572,26 +572,6 @@ li {
 :: 5.0 Top Feature Area CSS 
 -------------------- */
 
-.single_catagory2 {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 30px;
-}
-
-.catagory2-title {
-    width: 200px;
-    height: 50px;
-    background-color: #fc6c3f;
-    position: absolute;
-    top: 50%;
-    text-align: center;
-    border-radius: 30px;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
 
 .categories_area {
     padding: 80px 0 50px 0;
