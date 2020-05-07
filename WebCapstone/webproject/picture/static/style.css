@@ -36,7 +36,6 @@
 @import 'css/others/owl.carousel.min.css';
 @import 'css/others/font-awesome.min.css';
 @import 'css/others/pe-icon-7-stroke.css';
-
 /* --------------------
 :: 1.0 Base CSS
 -------------------- */
@@ -284,23 +283,27 @@ li {
     z-index: 999999;
 }
 
-.yummy-load {
-    -webkit-animation: 2000ms linear 0s normal none infinite running yummy-load;
-    animation: 2000ms linear 0s normal none infinite running yummy-load;
+.filter-load {
+    -webkit-animation: 2000ms linear 0s normal none infinite running filter-load;
+    animation: 2000ms linear 0s normal none infinite running filter-load;
     background: transparent none repeat scroll 0 0;
     border-color: #dddddd #dddddd #fc6c3f;
+    /*border-color: #dddddd #dddddd #f0c605;*/
     border-radius: 50%;
     border-style: solid;
-    border-width: 3px;
-    height: 40px;
+    /*border-width: 3px;*/
+    border-width: 5px;
+    /*height: 40px;*/
+    height: 60px;
     left: calc(50% - 20px);
     position: relative;
     top: calc(50% - 20px);
-    width: 40px;
+    /*width: 40px;*/
+    width: 60px;
     z-index: 9;
 }
 
-@-webkit-keyframes yummy-load {
+@-webkit-keyframes filter-load {
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
@@ -311,7 +314,7 @@ li {
     }
 }
 
-@keyframes yummy-load {
+@keyframes filter-load {
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
@@ -321,6 +324,90 @@ li {
         transform: rotate(360deg);
     }
 }
+
+/*
+my css
+*/
+.tab{
+    width:1100px;
+    height:auto;
+    overflow:hidden;
+}
+ 
+.tab ul{
+    padding:0;
+    margin:0;
+    list-style:none;
+    width:100%:
+    height:auto;
+    overflow:hidden;
+}
+ 
+.tab ul li{
+    display:inline-block;
+    width:33.3333%;
+    float:left;
+    line-height:40px;
+    text-align:center;
+    cursor:pointer;
+}
+ 
+.tab ul li:hover,
+.tab ul li.on{
+    background:#ffddcc;
+}
+ 
+.tab .conBox{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    min-height:200px;
+    background: #ffffff;;
+    display:none;
+    text-align:center;
+}
+ 
+.tab .conBox.on{
+    display:block;
+}
+
+.slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fc6c3f;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fc6c3f;
+    cursor: pointer;
+  }
 
 /* --------------------
 :: 2.0 Top Header Area CSS

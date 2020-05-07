@@ -42,26 +42,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-5 col-sm-6">
-                    <!--  Top Social bar start -->
-                    <!--<div class="top_social_bar">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                    </div>-->
+        
                 </div>
                 <!--  Login Register Area -->
                 <div class="col-7 col-sm-6">
                     <div class="signup-search-area d-flex align-items-center justify-content-end">
-                        <!--<div class="login_register_area d-flex">
-                            <div class="login">
-                                <a href="register.html">Sing in</a>
-                            </div>
-                            <div class="register">
-                                <a href="register.html">Sing up</a>
-                            </div>
-                        </div>-->
                         <!-- Search Button Area -->
                         <div class="search_button">
                             <a class="searchBtn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -100,34 +85,12 @@
                         <!-- Menu Area Start -->
                         <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                             <ul class="navbar-nav" id="yummy-nav">
-                                <!--<li class="nav-item">
-                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="yummyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                                    <div class="dropdown-menu" aria-labelledby="yummyDropdown">
-                                        <a class="dropdown-item" href="index.html">Home</a>
-                                        <a class="dropdown-item" href="archive.html">Archive</a>
-                                        <a class="dropdown-item" href="single.html">Single Blog</a>
-                                        <a class="dropdown-item" href="static.html">Static Page</a>
-                                        <a class="dropdown-item" href="contact.html">Contact</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Features</a>
-                                </li>-->
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'home' %}">Filter Change</a>
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link" href="">Recommendation<span class="sr-only">(current)</span></a>
                                 </li>
-                                <!--<li class="nav-item">
-                                    <a class="nav-link" href="#">MyPage</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>-->
                             </ul>
                         </div>
                     </nav>
@@ -137,19 +100,7 @@
     </header>
     <!-- ****** Header Area End ****** -->
 
-    <!-- ****** Breadcumb Area Start ****** -->
-    <!--<div class="breadcumb-area" style="background-image: url(img/bg-img/breadcumb.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="bradcumb-title text-center">
-                        <h2>Archive Page</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <h1>
+    <!--<h1>
         {% for key, value in info.items %}
             {% for k, v in value.items %}
                 {% if k == 'width' %}
@@ -160,7 +111,7 @@
                 {% endif %}
             {% endfor %}
         {% endfor %}
-    </h1>
+    </h1>-->
 
     <div class="breadcumb-nav">
         <div class="container">
@@ -269,13 +220,6 @@
                         </div>
                     </div>
                 </div>
-                
-
-                <!--{% for key, value in info.items %}
-                    {% for k, v in value.items %}
-                        {{ v }}
-                    {% endfor %}
-                {% endfor %}-->
 
                 <!-- Single Post -->
                 <div class="col-12 col-md-6 col-lg-4">

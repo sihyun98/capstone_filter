@@ -319,6 +319,53 @@ li {
     }
 }
 
+/*
+my css
+*/
+.tab{
+    width:200px;
+    height:auto;
+    overflow:hidden;
+}
+
+.tab ul{
+    padding:0;
+    margin:0;
+    list-style:none;
+    width:100%:
+    height:auto;
+    overflow:hidden;
+}
+
+.tab ul li{
+    display:inline-block;
+    width:33.3333%;
+    float:left;
+    line-height:40px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.tab ul li:hover,
+.tab ul li.on{
+    background: #41a1f6;
+}
+
+.tab .conBox{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    min-height:200px;
+    background:#41a1f6;
+    /*background:#ccc;*/
+    display:none;
+    text-align:center;
+}
+
+.tab .conBox.on{
+    display:block;
+}
+
 /* --------------------
 :: 2.0 Top Header Area CSS
 -------------------- */
