@@ -909,6 +909,17 @@
             alert("Notice\nHello World!");
             //swal("Notice","Hello World!");
             };
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
         </script>
 
         </div>
@@ -976,12 +987,22 @@
     <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %} 
         {{ form.as_p }}
+        <input type='file' onchange="readURL(this);" />
+        <img id="blah" src="#" alt="your image" />
         <!--<p> 
             <input id="id_image" type="file" class="" name="image"> 
         </p> -->
         <input type="submit" value="Submit" /> 
     </form>
 
+    {% for img in images %}
+    <!--path :{{ img.pic.path }}
+    url : {{ img.pic.url }}-->
+    <img src="{{ img.pic1.url }}" alt="">
+    <img src="{{ img.pic2.url }}" alt="">
+    <img src="{{ img.pic3.url }}" alt="">
+    <br>
+    {% endfor %}
 
     <!--<button onclick="message()">클릭</button>-->
 	<!--<script>

@@ -47,7 +47,7 @@ def home(request):
 
 
 
-    images = Image.objects
+    images = Image.objects.all()
     testData = scrap()
     info = {}
     for number in range(len(testData)):
