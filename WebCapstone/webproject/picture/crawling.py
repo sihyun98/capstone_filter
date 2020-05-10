@@ -37,24 +37,70 @@
 
 import requests
 from ast import literal_eval
+import itertools
 
 def scrap():
-    url = "https://pixabay.com/api/?key=16114175-7f138daad5a59db53fac2b925&q=yellow+flower&image_type=photo"
-    req = requests.get(url).content
-    #allData = req['total']
-    req = req.decode('utf-8')
-    allData = literal_eval(req)
+    array = ["sky", "flower", "tree"]
+    # c = itertools.combinations(array, i)
+
+    # url1 = "https://pixabay.com/api/?key=16114175-7f138daad5a59db53fac2b925&q=sky&image_type=photo"
+    # url2 = "https://pixabay.com/api/?key=16114175-7f138daad5a59db53fac2b925&q=flower&image_type=photo"
+    # url3 = "https://pixabay.com/api/?key=16114175-7f138daad5a59db53fac2b925&q=tree&image_type=photo"
+
+    info = {}
+
+    for i in range(len(array)):
+        c = list(itertools.combinations(array, len(array)-i))
+
+        for j in range(len(c)):
+            add = c[j][0]
+            for case in range(1, len(c[0])):
+                # case += 1
+                add += "+" + c[j][case]
+            
+            url = "https://pixabay.com/api/?key=16114175-7f138daad5a59db53fac2b925&q=" + add + "&image_type=photo"
+            req = requests.get(url).content
+            req = req.decode('utf-8')
+            allData = literal_eval(req)
+            testData = allData['hits']
+
+    # req = requests.get(url1).content
+    # req = req.decode('utf-8')
+    #allData = literal_eval(req)
+    # temp = allData['hits']
+            #print(testData)
+
+    #testData = scrap()
+            for number in range(len(testData)):
+                temp = {}
+                if(testData[number]['webformatWidth'] == 640 and testData[number]['webformatHeight'] == 426):
+                    temp['url'] = testData[number]['webformatURL']
+                    if(len(testData[number]['user']) > 10):
+                        temp['user'] = testData[number]['user'][0:10] + ".."
+                    else:
+                        temp['user'] = testData[number]['user']
+                    month = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]
+                    d = testData[number]['previewURL'].split('/')
+                    temp['date'] = month[int(d[5])-1] + " " + str(int(d[6])) + ", " + d[4]
+                    temp['likes'] = testData[number]['likes']
+                    temp['comments'] = testData[number]['comments']
+                    temp['pageURL'] = testData[number]['pageURL']
+                    #print(temp['pageURL'])
+                    info[len(info)] = temp
+                    if(len(info) == 30):
+                        break
+
 
     #print("previewURL: ", allData['hits'][0]['previewURL'])
     #print("webformatURL: ", allData['hits'][0]['webformatURL'])
     #print("largeImageURL: ", allData['hits'][0]['largeImageURL'])
-
+    
 
     #
         # for key, value in allData['hits'][i]:
         #     print(key, value)
     #print(allData['hits'].shape)
 
-    return allData['hits']
-
-scrap()
+    #return allData['hits']
+    return info
+# scrap()
