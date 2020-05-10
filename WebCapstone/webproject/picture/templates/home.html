@@ -62,7 +62,36 @@
         </div>
     </div>
     <!-- ****** Top Header Area End ****** -->
-
+    <!--<header class="header_area">
+        <div class="container">
+            <div class="row">
+                Logo Area Start
+                <div class="col-12">
+                    <div class="logo_area text-center">
+                        <a href="index.html" class="yummy-logo">Recommendation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+                        Menu Area Start
+                        <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
+                            <ul class="navbar-nav" id="yummy-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'home' %}">Filter Change</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="">Recommendation<span class="sr-only">(current)</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>-->
     <!-- ****** Header Area Start ****** -->
     <header class="header_area">
         <div class="container">
@@ -79,11 +108,35 @@
 
 
             <div class="tab">
+                <!--<div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+                            Menu Area Start
+                            <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
+                                <ul class="navbar-nav" id="yummy-nav">
+                                    <li data-id="con1" class="nav-item">Filter Change</li>
+                                    <li data-id="con2">Recommendation</li>
+                                    <li data-id="con3">Result</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'home' %}">Filter Change</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="">Recommendation<span class="sr-only">(current)</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>-->
+
+
                 <ul>
                     <li data-id="con1" class="on">Filter Change</li>
                     <li data-id="con2">Recommendation</li>
                     <li data-id="con3">Result</li>
                 </ul>
+
                 <!-- home -->
                 <div id="con1" class="conBox on">
                     <div class="breadcumb-nav">
@@ -100,8 +153,28 @@
                             </div>
                         </div>
                     </div>
+
+                    <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %} 
+                        <!--<div class="filebox">-->
+                            <label for="ex_filename">업로드1</label>
+                            <input class="filebox" type="file", id="ex_filename" name="pic1">
+                        <!--</div>
+                        <div class="filebox">-->
+                            <label for="ex_filename">업로드2</label>
+                            <input type="file", id="ex_filename" name="pic2">
+                        <!--</div>
+                        <div class="filebox">-->
+                            <label for="ex_filename">업로드3</label>
+                            <input type="file", id="ex_filename" name="pic3">
+                        <!--</div>-->
+                
+                            <input type="submit" value="Submit" /> 
+                    </form>
+
                     <!-- user image  - title -->
                     <section class="categories_area clearfix" id="about">
+                        
                         <div class="row h-100 align-items-center">
                             <div class="col-12">
                                 <div class="bradcumb-title text-center">
@@ -801,7 +874,7 @@
                                         <img src="{% static 'img/catagory-img/flower1_result.jpg' %}" alt="">
                                         <!--<img src="{% static 'img/catagory-img/upload.jpg' %}" alt="">-->
                                         <div class="catagory-title">
-                                            <a href="#">
+                                            <a href="{% static 'img/catagory-img/flower1_result.jpg' %}" download>
                                                 <h5>Download</h5>
                                             </a>
                                         </div>
@@ -832,7 +905,7 @@
                                         <img src="{% static 'img/catagory-img/flower2_result.jpg' %}" alt="" align="center">
                                         <!--<img src="{% static 'img/catagory-img/upload.jpg' %}" alt="">-->
                                         <div class="catagory-title">
-                                            <a href="#">
+                                            <a href="{% static 'img/catagory-img/flower2_result.jpg' %}" download>
                                                 <h5>Download</h5>
                                             </a>
                                         </div>
@@ -862,7 +935,7 @@
                                         <img src="{% static 'img/catagory-img/flower3_result.jpg' %}" alt="">
                 
                                         <div class="catagory-title">
-                                            <a href="#">
+                                            <a href="{% static 'img/catagory-img/flower3_result.jpg' %}" download>
                                                 <h5>Download</h5>
                                             </a>
                                         </div>
@@ -894,6 +967,29 @@
                 </div>
             </div>
 
+            <!--<div class="tab">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+                            Menu Area Star
+                            <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
+                                <ul class="navbar-nav" id="yummy-nav">
+                                    <li data-id="con1" class="on">Filter Change</li>
+                                    <li data-id="con2">Recommendation</li>
+                                    <li data-id="con3">Result</li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'home' %}">Filter Change</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="">Recommendation<span class="sr-only">(current)</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>-->
+
         <script>
             $(function(){
                 $(".tab ul li").click(function(){ 
@@ -921,6 +1017,41 @@
             }
 
         </script>
+
+        <!--<script>
+            $(document).ready(function() {
+                var $tabButtonItem = $('#tab-button li'),
+                    $tabSelect = $('#tab-select'),
+                    $tabContents = $('.conBox on'),
+                    activeClass = 'is-active';
+
+                $tabButtonItem.first().addClass(activeClass);
+                $tabContents.not(':first').hide();
+
+                // button
+                $tabButtonItem.find('a').on('click', function(e) {
+                    var target = $(this).attr('href');
+
+                    $tabButtonItem.removeClass(activeClass);
+                    $(this).parent().addClass(activeClass);
+                    $tabSelect.val(target);
+                    $tabContents.hide();
+                    $(target).show();
+                    e.preventDefault();
+                });
+
+                // select
+                $tabSelect.on('change', function() {
+                    var target = $(this).val(),
+                        targetSelectNum = $(this).prop('selectedIndex');
+
+                    $tabButtonItem.removeClass(activeClass);
+                    $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                    $tabContents.hide();
+                    $(target).show();
+                });
+            });
+        </script>-->
 
         </div>
     </header>
@@ -984,25 +1115,26 @@
         </div>
     </footer>
 
-    <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+   
+
+    <!--<form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %} 
         {{ form.as_p }}
         <input type='file' onchange="readURL(this);" />
         <img id="blah" src="#" alt="your image" />
-        <!--<p> 
-            <input id="id_image" type="file" class="" name="image"> 
-        </p> -->
         <input type="submit" value="Submit" /> 
-    </form>
+    </form>-->
 
-    {% for img in images %}
-    <!--path :{{ img.pic.path }}
-    url : {{ img.pic.url }}-->
+    <!--<p> 
+        <input id="id_image" type="file" class="" name="image"> 
+    </p> -->
+
+    <!--{% for img in images %}
     <img src="{{ img.pic1.url }}" alt="">
     <img src="{{ img.pic2.url }}" alt="">
     <img src="{{ img.pic3.url }}" alt="">
     <br>
-    {% endfor %}
+    {% endfor %}-->
 
     <!--<button onclick="message()">클릭</button>-->
 	<!--<script>

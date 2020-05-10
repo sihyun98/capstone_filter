@@ -36,14 +36,26 @@ from .forms import ImageForm
 
 
 def home(request):
+    form = Image()
     if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            info = form.save(commit=False)
-            info.save()
-            return redirect('home')
-    else:
-        form = ImageForm()
+        form = Image()
+        # form.pic1 = request.POST.get('pic1')
+        # form.pic2 = request.POST.get('pic2')
+        # form.pic3 = request.POST.get('pic3')
+
+        form.pic1 = request.FILES['pic1']
+        form.pic2 = request.FILES['pic2']
+        form.pic3 = request.FILES['pic3']
+        form.save()
+        return redirect('/')
+    # if request.method == 'POST':
+    #     form = ImageForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         info = form.save(commit=False)
+    #         info.save()
+    #         return redirect('home')
+    # else:
+    #     form = ImageForm()
 
 
 

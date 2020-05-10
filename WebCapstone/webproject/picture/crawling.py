@@ -45,7 +45,7 @@ def scrap():
     req = req.decode('utf-8')
     allData = literal_eval(req)
 
-    print("previewURL: ", allData['hits'][0]['previewURL'])
+    #print("previewURL: ", allData['hits'][0]['previewURL'])
     #print("webformatURL: ", allData['hits'][0]['webformatURL'])
     #print("largeImageURL: ", allData['hits'][0]['largeImageURL'])
 
