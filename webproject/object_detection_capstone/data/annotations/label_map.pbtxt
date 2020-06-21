@@ -1,0 +1,97 @@
+item {
+  id: 1
+  name: 'dog'
+}
+
+item {
+  id: 2
+  name: 'person'
+}
+item {
+  id: 4
+  name: 'flower'
+}
+item {
+  id: 5
+  name: 'sky'
+}
+item {
+  id: 6
+  name: 'mountain'
+}
+item {
+  id: 7
+  name: 'sea'
+}
+item {
+  id: 8
+  name: 'ground'
+}
+item {
+  id: 9
+  name: 'forest'
+}
+item {
+  id: 10
+  name: 'field'
+}
+item {
+  id: 11
+  name: 'tree'
+}
+item {
+  id: 12
+  name: 'bird'
+}
+item {
+  id: 13
+  name: 'apple'
+}
+item {
+  id: 14
+  name: 'stone'
+}
+item {
+  id: 15
+  name: 'lake'
+}
+item {
+  id: 16
+  name: 'bottle'
+}
+item {
+  id: 17
+  name: 'house'
+}
+item {
+  id: 18
+  name: 'vilage'
+}
+item {
+  id: 19
+  name: 'cow'
+}
+item {
+  id: 20
+  name: 'beach'
+}
+item {
+  id: 21
+  name: 'waterfall'
+}
+item {
+  id: 22
+  name: 'desert'
+}
+item {
+  id: 23
+  name: 'city'
+}
+item {
+  id: 24
+  name: 'butterfly'
+}
+item {
+  id: 25
+  name: 'road'
+}
