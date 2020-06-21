@@ -1,0 +1,26 @@
+<annotation>
+	<folder>풍경사진</folder>
+	<filename>image588.jpeg</filename>
+	<path>/Users/yangsuyeong/Desktop/풍경사진/image588.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>262</width>
+		<height>192</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sky</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>3</ymin>
+			<xmax>259</xmax>
+			<ymax>191</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>풍경사진</folder>
+	<filename>image1572.jpg</filename>
+	<path>/Users/yangsuyeong/Desktop/풍경사진/image1572.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>604</width>
+		<height>340</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sky</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>10</xmin>
+			<ymin>7</ymin>
+			<xmax>594</xmax>
+			<ymax>333</ymax>
+		</bndbox>
+	</object>
+</annotation>

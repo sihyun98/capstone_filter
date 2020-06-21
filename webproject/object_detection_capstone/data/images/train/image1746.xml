@@ -1,0 +1,26 @@
+<annotation>
+	<folder>풍경사진</folder>
+	<filename>image1746.jpg</filename>
+	<path>/Users/yangsuyeong/Desktop/풍경사진/image1746.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>255</width>
+		<height>340</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sea</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>8</xmin>
+			<ymin>14</ymin>
+			<xmax>255</xmax>
+			<ymax>340</ymax>
+		</bndbox>
+	</object>
+</annotation>

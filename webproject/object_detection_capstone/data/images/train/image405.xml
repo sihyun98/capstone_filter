@@ -1,0 +1,26 @@
+<annotation>
+	<folder>풍경사진</folder>
+	<filename>image405.jpg</filename>
+	<path>/Users/yangsuyeong/Desktop/풍경사진/image405.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>680</width>
+		<height>340</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sea</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>155</ymin>
+			<xmax>680</xmax>
+			<ymax>336</ymax>
+		</bndbox>
+	</object>
+</annotation>

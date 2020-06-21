@@ -1,0 +1,26 @@
+<annotation>
+	<folder>풍경사진</folder>
+	<filename>image1647.jpg</filename>
+	<path>/Users/yangsuyeong/Desktop/풍경사진/image1647.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>480</width>
+		<height>340</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>tree</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>11</xmin>
+			<ymin>5</ymin>
+			<xmax>331</xmax>
+			<ymax>263</ymax>
+		</bndbox>
+	</object>
+</annotation>

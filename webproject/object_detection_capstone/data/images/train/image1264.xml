@@ -1,0 +1,26 @@
+<annotation>
+	<folder>풍경사진</folder>
+	<filename>image1264.jpeg</filename>
+	<path>/Users/yangsuyeong/Desktop/풍경사진/image1264.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>259</width>
+		<height>194</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>flower</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>77</xmin>
+			<ymin>21</ymin>
+			<xmax>245</xmax>
+			<ymax>190</ymax>
+		</bndbox>
+	</object>
+</annotation>
