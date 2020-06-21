@@ -1,0 +1,183 @@
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="single_image wow fadeInUp" data-wow-delay=".3s">
+        <img id="blah1" src="{% static 'img/catagory-img/main.jpg' %}" alt="" style="margin-top:auto; margin-bottom: auto;">
+        <img id="blah1" src="#" alt="" style="margin-top:auto; margin-bottom: auto;">
+    </div>
+    <div>
+        <div class="single_catagory wow fadeInUp" style="float:left" data-wow-delay=".3s" style="text-align: center;">
+            <br>
+            <div class="single_catagory">
+                <div class="catagory-title">
+                    <label for="ex_filename1"><h5><div id="testalign">User Image</div></h5></label>
+                    <input class="filebox" type="file", id="ex_filename1" accept="image/*" name="pic1"/>
+                </div>
+            </div>
+
+            <script>
+                function test1(){
+                    document.getElementById('blah1').src = "{% static 'img/catagory-img/main.jpg' %}"
+                    document.getElementById('ex_filename1').value = null
+                    if(!(document.getElementById('ex_filename1').value) && !(document.getElementById('ex_filename2').value) && !(document.getElementById('ex_filename3').value)){
+                        $('#bell').removeClass('newColor');
+                        $('#bell').addClass('oldColor');
+                    }
+                }
+            </script>
+            <br><br>
+        </div>
+        <!-- HERE -->
+        <div class="wow fadeInUp" data-wow-delay=".3s" style="float:right;" id="xbutton">
+            <button type="button" onclick="test1()" class="btn btn-danger">X</button>
+        </div>
+        <!--  -->
+    </div> 
+</div>
+
+
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="single_image wow fadeInUp" data-wow-delay=".3s">
+        <img id="blah2" src="{% static 'img/catagory-img/main.jpg' %}" alt="">
+        <img id="blah2" src="#" alt="">
+    </div>
+    <div>
+        <div class="single_catagory wow fadeInUp" style="float:left" data-wow-delay=".3s" style="text-align: center;">
+            <br>
+            <div class="single_catagory">
+                <div class="catagory-title">
+                    <label for="ex_filename2"><h5><div id="testalign">User Image</div></h5></label>
+                    <input class="filebox" type="file", id="ex_filename2" accept="image/*" name="pic2"/>
+                </div>
+            </div>
+
+            <script>
+                function test2(){
+                    document.getElementById('blah2').src = "{% static 'img/catagory-img/main.jpg' %}"
+                    document.getElementById('ex_filename2').value = null
+                    if(!(document.getElementById('ex_filename1').value) && !(document.getElementById('ex_filename2').value) && !(document.getElementById('ex_filename3').value)){
+                        $('#bell').removeClass('newColor');
+                        $('#bell').addClass('oldColor');
+                    }
+                }
+            </script>
+            <br><br>
+        </div>
+        <!-- HERE -->
+        <div class="wow fadeInUp" data-wow-delay=".3s" style="float:right;" id="xbutton">
+            <button type="button" onclick="test2()" class="btn btn-danger">X</button>
+        </div>
+        <!--  -->
+    </div> 
+</div>
+
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="single_image wow fadeInUp" data-wow-delay=".3s">
+        <img id="blah3" src="{% static 'img/catagory-img/main.jpg' %}" alt="">
+        <img id="blah3" src="#" alt="">
+    </div>
+    <div>
+        <div class="single_catagory wow fadeInUp" style="float:left" data-wow-delay=".3s" style="text-align: center;">
+            <br>
+            <div class="single_catagory">
+                <div class="catagory-title">
+                    <label for="ex_filename3"><h5><div id="testalign">User Image</div></h5></label>
+                    <input class="filebox" type="file", id="ex_filename3" accept="image/*" name="pic3"/>
+                </div>
+            </div>
+
+            <script>
+                function test3(){
+                    document.getElementById('blah3').src = "{% static 'img/catagory-img/main.jpg' %}"
+                    document.getElementById('ex_filename3').value = null
+                    if(!(document.getElementById('ex_filename1').value) && !(document.getElementById('ex_filename2').value) && !(document.getElementById('ex_filename3').value)){
+                        $('#bell').removeClass('newColor');
+                        $('#bell').addClass('oldColor');
+                    }
+                }
+            </script>
+            <br><br>
+        </div>
+        <!-- HERE -->
+        <div class="wow fadeInUp" data-wow-delay=".3s" style="float:right;" id="xbutton">
+            <button type="button" onclick="test3()" class="btn btn-danger">X</button>
+        </div>
+        <!--  -->
+    </div> 
+</div>
+
+
+
+
+
+
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">
+        <img src="" alt="">
+    </div>
+</div>
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="single_image wow fadeInUp" data-wow-delay=".3s">
+        <img id="blah4" src="{% static 'img/catagory-img/main.jpg' %}" alt=""/>
+        <img id="blah4" src="#" alt=""/>
+    </div>
+    <div>
+        <div class="single_catagory wow fadeInUp" data-wow-delay=".3s" style="float:left" style="text-align: center;">
+            <br>
+            <div class="single_catagory">
+                <div class="catagory-title">
+                    <label for="ex_filename4"><h5><div id="testalign">Style Image</div></h5></label>
+                    <!-- HERE -->
+                    <input type="file", id="ex_filename4" accept="image/*" name="pic4" onclick="check_img()">
+                    <!--  -->
+                    <input type="hidden", id="new_filename4" name="reco">
+                </div>
+            </div>
+
+            <script>
+                ////// HERE
+                function check_img(){
+                    $("#sub_button").attr("disabled",false);
+                }
+                //////
+
+                function test4(){
+                    document.getElementById('blah4').src = "{% static 'img/catagory-img/main.jpg' %}"
+                    document.getElementById('ex_filename4').value = null
+                }
+            </script>
+            <br><br>
+        </div>
+        <!-- HERE -->
+        <div class="wow fadeInUp" data-wow-delay=".3s" id="xbutton" style="float:right;">
+            <button type="button" onclick="test4()" class="btn btn-danger">X</button>
+        </div>
+        <!--  -->
+    </div> 
+</div>
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">
+        <img src="" alt="">
+    </div>
+</div>
+
+
+
+<div class="single_catagory2 wow fadeInUp" data-wow-delay=".3s" style="text-align: center;">
+    <div class="catagory-title">
+        <button class="catagory-title" type="submit" onclick="check_style()" id="sub_button"><h5>Convert Image</h5></button>
+        <script>
+            function check_style(){
+                if(!(document.getElementById('ex_filename4').files[0]) && !(document.getElementById('new_filename4').value)){
+                    $("#sub_button").attr("disabled",true);
+                }
+                /////// HERE
+                else{
+                    $(".tab ul li").removeClass('on');
+                    $(".tab .conBox").removeClass('on');
+                    $("#con3").addClass('on');
+                    $("#conc3").addClass('on');
+                }
+                ///////
+            }
+        </script>
+    </div>
+</div>

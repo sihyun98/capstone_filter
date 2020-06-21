@@ -1,0 +1,636 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Filter Change</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+    <!-- <link rel="icon" href="{static 'static/img/core-img/favicon.ico'}"> -->
+
+
+    <!-- Core Stylesheet -->
+    <link href="static/style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="static/css/responsive/responsive.css?ver=1.2" rel="stylesheet">
+
+    <!-- javascript tab -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js?ver=1.2"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="filter-load"></div>
+    </div>
+
+    <!-- ****** Top Header Area Start ****** -->
+    <div class="top_header_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 col-sm-6">
+                </div>
+                    <div class="col-7 col-sm-6">
+                        <div class="signup-search-area d-flex align-items-center justify-content-end">
+                        <!-- Search Button Area -->
+                        <div class="search_button">
+                            <a class="searchBtn"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </div>
+                        <!-- Search Form -->
+                        <div class="search-hidden-form">
+                            <form id="search-submit">
+                                <input type="text" id="search-anything" placeholder="Search Image">
+                                <input type="submit" value="" class="d-none">
+                                <span class="searchBtn"><i class="fa fa-times" aria-hidden="true"></i></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ****** Header Area Start ****** -->
+    <header class="header_area">
+        <div class="container">
+            <div class="row">
+                <!-- Logo Area Start -->
+                <div class="col-12">
+                    <div class="logo_area text-center">
+                        <a href="{% url 'home' %}" class="yummy-logo">Filter Change</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab">
+                <ul>
+                    <li data-id="con1" id="conc1" class="on">Filter Change</li>
+                    <li data-id="con2" id="conc2"><div id = "reco_tab"><i id='bell' class="fa fa-bell fa-lg" aria-hidden="true"></i>  Recommendation</div></li>
+                    <li data-id="con3" id="conc3">Result</li>
+                </ul>
+         
+                <!-- home -->
+                <div id="con1" class="conBox on">
+                    <div class="breadcumb-nav">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><i class="fa fa-home" aria-hidden="true"></i> Home</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Filter Change</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="categories_area clearfix" id="about">
+                        <form action="{% url 'home' %}" method="post" enctype="multipart/form-data" name="img_upload">
+                            {% csrf_token %}
+
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="bradcumb-title text-center">
+                                    <h2>User Image</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- user image - picture -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="single_image wow fadeInUp" data-wow-delay=".3s">
+                                        <img id="blah1" src="{% static 'img/catagory-img/main.jpg' %}" alt="" style="margin-top:auto; margin-bottom: auto;">
+                                        <img id="blah1" src="#" alt="" style="margin-top:auto; margin-bottom: auto;">
+                                    </div>
+                                    <div>
+                                        <div class="single_catagory wow fadeInUp" style="float:left" data-wow-delay=".3s" style="text-align: center;">
+                                            <br>
+                                            <div class="single_catagory">
+                                                <div class="catagory-title">
+                                                    <label for="ex_filename1"><h5><div id="testalign">User Image</div></h5></label>
+                                                    <input class="filebox" type="file", id="ex_filename1" accept="image/*" name="pic1"/>
+                                                </div>
+                                            </div>
+
+                                            <script>
+                                                function test1(){
+                                                    document.getElementById('blah1').src = "{% static 'img/catagory-img/main.jpg' %}"
+                                                    document.getElementById('ex_filename1').value = null
+                                                    if(!(document.getElementById('ex_filename1').value) && !(document.getElementById('ex_filename2').value) && !(document.getElementById('ex_filename3').value)){
+                                                        $('#bell').removeClass('newColor');
+                                                        $('#bell').addClass('oldColor');
+                                                    }
+                                                }
+                                            </script>
+                                            <br><br>
+                                        </div>
+                                        <div class="wow fadeInUp" data-wow-delay=".3s" style="float:right;" id="xbutton">
+                                            <button type="button" onclick="test1()" class="btn btn-danger">X</button>
+                                        </div>
+                                    </div> 
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="single_image wow fadeInUp" data-wow-delay=".3s">
+                                        <img id="blah2" src="{% static 'img/catagory-img/main.jpg' %}" alt="">
+                                        <img id="blah2" src="#" alt="">
+                                    </div>
+                                    <div>
+                                        <div class="single_catagory wow fadeInUp" style="float:left" data-wow-delay=".3s" style="text-align: center;">
+                                            <br>
+                                            <div class="single_catagory">
+                                                <div class="catagory-title">
+                                                    <label for="ex_filename2"><h5><div id="testalign">User Image</div></h5></label>
+                                                    <input class="filebox" type="file", id="ex_filename2" accept="image/*" name="pic2"/>
+                                                </div>
+                                            </div>
+
+                                            <script>
+                                                function test2(){
+                                                    document.getElementById('blah2').src = "{% static 'img/catagory-img/main.jpg' %}"
+                                                    document.getElementById('ex_filename2').value = null
+                                                    if(!(document.getElementById('ex_filename1').value) && !(document.getElementById('ex_filename2').value) && !(document.getElementById('ex_filename3').value)){
+                                                        $('#bell').removeClass('newColor');
+                                                        $('#bell').addClass('oldColor');
+                                                    }
+                                                }
+                                            </script>
+                                            <br><br>
+                                        </div>
+                                        <div class="wow fadeInUp" data-wow-delay=".3s" style="float:right;" id="xbutton">
+                                            <button type="button" onclick="test2()" class="btn btn-danger">X</button>
+                                        </div>
+                                    </div> 
+                                </div>
+                                
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="single_image wow fadeInUp" data-wow-delay=".3s">
+                                        <img id="blah3" src="{% static 'img/catagory-img/main.jpg' %}" alt="">
+                                        <img id="blah3" src="#" alt="">
+                                    </div>
+                                    <div>
+                                        <div class="single_catagory wow fadeInUp" style="float:left" data-wow-delay=".3s" style="text-align: center;">
+                                            <br>
+                                            <div class="single_catagory">
+                                                <div class="catagory-title">
+                                                    <label for="ex_filename3"><h5><div id="testalign">User Image</div></h5></label>
+                                                    <input class="filebox" type="file", id="ex_filename3" accept="image/*" name="pic3"/>
+                                                </div>
+                                            </div>
+
+                                            <script>
+                                                function test3(){
+                                                    document.getElementById('blah3').src = "{% static 'img/catagory-img/main.jpg' %}"
+                                                    document.getElementById('ex_filename3').value = null
+                                                    if(!(document.getElementById('ex_filename1').value) && !(document.getElementById('ex_filename2').value) && !(document.getElementById('ex_filename3').value)){
+                                                        $('#bell').removeClass('newColor');
+                                                        $('#bell').addClass('oldColor');
+                                                    }
+                                                }
+                                            </script>
+                                            <br><br>
+                                        </div>
+                                        <div class="wow fadeInUp" data-wow-delay=".3s" style="float:right;" id="xbutton">
+                                            <button type="button" onclick="test3()" class="btn btn-danger">X</button>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- style image - title -->
+                        <br><br><br>
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="bradcumb-title text-center">
+                                    <h2>Style Image</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- style image - picture -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="single_image wow fadeInUp" data-wow-delay=".3s">
+                                        <img id="blah4" src="{% static 'img/catagory-img/main.jpg' %}" alt=""/>
+                                        <img id="blah4" src="#" alt=""/>
+                                    </div>
+                                    <div>
+                                        <div class="single_catagory wow fadeInUp" data-wow-delay=".3s" style="float:left" style="text-align: center;">
+                                            <br>
+                                            <div class="single_catagory">
+                                                <div class="catagory-title">
+                                                    <label for="ex_filename4"><h5><div id="testalign">Style Image</div></h5></label>
+                                                    <input type="file", id="ex_filename4" accept="image/*" name="pic4" onclick="check_img()">
+                                                    <input type="hidden", id="new_filename4" name="reco">
+                                                </div>
+                                            </div>
+
+                                            <script>
+                                                function check_img(){
+                                                    $("#sub_button").attr("disabled",false);
+                                                }
+
+                                                function test4(){
+                                                    document.getElementById('blah4').src = "{% static 'img/catagory-img/main.jpg' %}"
+                                                    document.getElementById('ex_filename4').value = null
+                                                }
+                                            </script>
+                                            <br><br>
+                                        </div>
+                                        <div class="wow fadeInUp" data-wow-delay=".3s" id="xbutton" style="float:right;">
+                                            <button type="button" onclick="test4()" class="btn btn-danger">X</button>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">
+                                        <img src="" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <!-- button -->
+                        <div class="single_catagory2 wow fadeInUp" data-wow-delay=".3s" style="text-align: center;">
+                            <div class="catagory-title">
+                                <button class="catagory-title" type="submit" onclick="check_style()" id="sub_button"><h5>Convert Image</h5></button>
+                                <script>
+                                    function check_style(){
+                                        if(!(document.getElementById('ex_filename4').files[0]) && !(document.getElementById('new_filename4').value)){
+                                            $("#sub_button").attr("disabled",true);
+                                        }
+                                        else{
+                                            $(".tab ul li").removeClass('on');
+                                            $(".tab .conBox").removeClass('on');
+                                            $("#con3").addClass('on');
+                                            $("#conc3").addClass('on');
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                        </form>
+                    </section>
+                    <!-- </form> -->
+                </div>
+                <!-- recommendation -->
+                <div id="con2" class="conBox">
+                    <div class="breadcumb-nav">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Recommendation</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <section class="archive-area section_padding_80">
+                        <script>
+                            var tempURL="/static/img/category-img/camera.jpg";
+                        </script>
+                        <div class="container">
+                            <div id = "pic_info" class="row">
+                            <div class="modal fade" id="layerpop" >
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <!-- header -->
+                                            <div class="modal-header">
+                                            <!-- 닫기(x) 버튼 -->
+                                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                                <!-- header title -->
+                                                <h4 class="modal-title">Recommendation Message</h4>
+                                            </div>
+                                            <!-- body -->
+                                            <div class="modal-body">
+                                                Add Image as Style Image?
+                                            </div>
+                                            <!-- Footer -->
+                                            <div class="modal-footer">
+                                            <!-- Footer -->
+                                                <button type="button" onclick="Pick_style()" class="btn btn-default">Okay</button>
+                                                <script>
+                                                    function Pick_style(){
+                                                        $(".tab ul li").removeClass('on');
+                                                        $(".tab .conBox").removeClass('on');
+                                                        $("#layerpop").modal('hide');
+                                                        $("#con1").addClass('on');
+                                                        $("#conc1").addClass('on');
+                                                        document.getElementById('blah4').src=tempURL;
+                                                        document.getElementById('new_filename4').value=tempURL;
+                                                        document.getElementById('ex_filename4').value = null
+                                                    }
+
+                                                    function pickimage(s){
+                                                        tempURL=s;
+                                                    }
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="con3" class="conBox">
+                    <div class="breadcumb-nav">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Result</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ****** Categories Area Start ****** -->
+                    <section class="categories_area clearfix" id="about">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="bradcumb-title text-center">
+                                    <h2>Converted Image</h2>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <br><br><br><br>
+                        {% if not re %}
+                            <h6>PLEASE WAIT</h6>
+                        {% endif %} -->
+                        <!-- <div id="preloader">
+                            <div class="filter-load"></div>
+                        </div> -->
+                        <br>
+                        <div class="container">
+                            <div class="row">
+                                {% if re %}
+                                {% for k , v in re.items%}
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="single_image wow fadeInUp" data-wow-delay="(.3)*{{k}}s">
+                                        <img src="data:image/png;base64, {{v}}" alt="" id="my_image{{k}}">
+                                        <br><br>
+                                        <div class="slidecontainer">
+                                        
+                                            <input type="range" min="-50" max="50" value="0" class="slider" name= "b_range{{k}}" id="b_range{{k}}">
+                                            <p>Brightness: <span id="b{{k}}"></span></p>
+
+                                            <input type="range" min="-50" max="50" value="0" class="slider" name="c_range{{k}}" id="c_range{{k}}">
+                                            <p>Saturation: <span id="c{{k}}"></span></p>
+
+                                            <input type="range" min="-50" max="50" value="0" class="slider" name ="s_range{{k}}" id="s_range{{k}}">
+                                            <p>Sharpness: <span id="s{{k}}"></span></p>
+
+                                            <input type="range" min="-50" max="50" value="0" class="slider" name ="n_range{{k}}" id="n_range{{k}}">
+                                            <p>Noise: <span id="n{{k}}"></span></p>
+
+                                            <input type="range" min="-50" max="50" value="0" class="slider" name ="ct_range{{k}}" id="ct_range{{k}}">
+                                            <p>Contrast: <span id="ct{{k}}"></span></p>
+                                        </div>
+                                    
+                                        <br>
+                                        <div class="single_catagory2" id="save_img{{k}}">
+                                            <div class="catagory-title" >
+                                                <h5><div id="testalign">Download</div></h5>
+                                            </div>
+                                        </div>
+                                        <br><br>
+                                    </div>
+
+                                    <script>
+                                        var b_slider{{k}} = document.getElementById("b_range{{k}}");
+                                        var b_output{{k}} = document.getElementById("b{{k}}");
+                                        b_output{{k}}.innerHTML = b_slider{{k}}.value;
+                                        
+                                        b_slider{{k}}.oninput = function() {
+                                            b_output{{k}}.innerHTML = this.value;
+                                        }
+                                        
+                                        var c_slider{{k}} = document.getElementById("c_range{{k}}");
+                                        var c_output{{k}} = document.getElementById("c{{k}}");
+                                        c_output{{k}}.innerHTML = c_slider{{k}}.value;
+                                        
+                                        c_slider{{k}}.oninput = function() {
+                                            c_output{{k}}.innerHTML = this.value;
+                                        }
+
+                                        var s_slider{{k}} = document.getElementById("s_range{{k}}");
+                                        var s_output{{k}} = document.getElementById("s{{k}}");
+                                        s_output{{k}}.innerHTML = s_slider{{k}}.value;
+                                        
+                                        s_slider{{k}}.oninput = function() {
+                                            s_output{{k}}.innerHTML = this.value;
+                                        }
+                                        
+                                        var n_slider{{k}} = document.getElementById("n_range{{k}}");
+                                        var n_output{{k}} = document.getElementById("n{{k}}");
+                                        n_output{{k}}.innerHTML = n_slider{{k}}.value;
+                                        
+                                        n_slider{{k}}.oninput = function() {
+                                            n_output{{k}}.innerHTML = this.value;
+                                        }
+
+                                        var ct_slider{{k}} = document.getElementById("ct_range{{k}}");
+                                        var ct_output{{k}} = document.getElementById("ct{{k}}");
+                                        ct_output{{k}}.innerHTML = ct_slider{{k}}.value;
+                                        
+                                        ct_slider{{k}}.oninput = function() {
+                                            ct_output{{k}}.innerHTML = this.value;
+                                        }
+
+                                        $(document).on('change', 'input[type=range]', function() {
+                                            var bright = parseInt($('#b_range{{k}}').val());
+                                            var saturation = parseInt($('#c_range{{k}}').val());
+                                            var sharpen = parseInt($('#s_range{{k}}').val());
+                                            var noise = parseInt($('#n_range{{k}}').val());
+                                            var contrast = parseInt($('#ct_range{{k}}').val());
+                                            Caman('#my_image{{k}}', function() {
+                                                this.revert(false);
+                                                this.brightness(bright).saturation(saturation).sharpen(sharpen).noise(noise).contrast(contrast).render();
+                                                });
+                                        });
+
+                                        $('#save_img{{k}}').on('click', function(e) {
+                                            Caman('#my_image{{k}}', function() {
+                                                this.render(function() {
+                                                    this.save("jpeg");
+                                                });
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                                
+
+                                
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                </div>
+            </div>
+        </header>
+        {% if re %}
+            <script>
+                $(".tab ul li").removeClass('on');
+                $(".tab .conBox").removeClass('on');
+                $("#con3").addClass('on');
+                $("#conc3").addClass('on');
+            </script>
+        {% endif %}
+        <script>
+            $(function(){
+                $(".tab ul li").click(function(){ 
+                    $(".tab ul li").removeClass('on');
+                    $(".tab .conBox").removeClass('on');
+                    $(this).addClass('on');
+                    $("#"+$(this).data('id')).addClass('on');
+                });
+            });
+            
+            function readURL1(input) {
+                $('#bell').removeClass('oldColor');
+                $('#bell').addClass('newColor');
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah1').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            function readURL2(input) {
+                $('#bell').removeClass('oldColor');
+                $('#bell').addClass('newColor');
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah2').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            function readURL3(input) {
+                $('#bell').removeClass('oldColor');
+                $('#bell').addClass('newColor');
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#blah3').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            function readURL4(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        console.log(e.target.result);
+                        $('#blah4').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#ex_filename1").change(function() {
+                readURL1(this);
+            });
+
+            $("#ex_filename2").change(function() {
+                readURL2(this);
+            });
+
+            $("#ex_filename3").change(function() {
+                readURL3(this);
+            });
+
+            $("#ex_filename4").change(function() {
+                readURL4(this);
+            });
+        </script>
+    </div>
+
+    <!-- ****** Footer Social Icon Area Start ****** -->
+    <div class="social_icon_area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ****** Footer Social Icon Area End ****** -->
+
+    <!-- ****** Footer Menu Area Start ****** -->
+    <footer class="footer_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Copywrite Text -->
+                    <div class="copy_right_text text-center">
+                        <p>Copyright @2020 All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ****** Footer Menu Area End ****** -->
+
+    <!-- Jquery-2.2.4 js -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap-4 js -->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins JS -->
+    <script src="{% static 'js/others/plugins.js' %}"></script>
+    <!-- Active JS -->
+    <script src="{% static 'js/active.js' %}"></script>
+    <script src="{% static 'js/recom_controller.js' %}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.js"></script>
+</body>
+
